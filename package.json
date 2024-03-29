@@ -1,37 +1,39 @@
 {
-  "name": "template-ts-vite",
-  "version": "1.1.0",
-  "description": "Excalibur TypeScript template for Vite",
+  "name": "custom-excalibur-ts-vite",
+  "version": "1.0.1",
+  "description": "Excalibur TypeScript custom template for Vite with linting settings",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
+    "lint": "biome lint --apply ./src",
+    "format": "biome format --write ./src",
     "test": "npm run build && ex-test -d ./dist -t ./test/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/excaliburjs/template-ts-vite.git"
   },
   "keywords": [
     "excalibur",
     "excaliburjs",
     "vite",
-    "game-engine"
+    "game-engine",
+    "game-template"
   ],
-  "author": "Erik Onarheim",
+  "author": "The 99's Puppycat",
   "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/excaliburjs/template-ts-vite/issues"
-  },
-  "homepage": "https://github.com/excaliburjs/template-ts-vite#readme",
+  "homepage": "https://github.com/huyhoang160593/excalibur-template-ts-vite#readme",
   "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
     "excalibur": "0.29.1",
     "typescript": "5.4.3",
-    "vite": "5.2.2"
+    "vite": "^5.2.6"
   },
   "dependencies": {
     "@excaliburjs/testing": "^0.25.0"
-  }
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "core-js"
+  ]
 }
