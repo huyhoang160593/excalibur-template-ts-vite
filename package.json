@@ -27,9 +27,13 @@
 		"lint": "biome check --write ./",
 		"serve": "vite preview",
 		"start": "vite",
-		"test": "npm run build && ex-test -d ./dist -t ./test/test.js"
+		"test": "$npm_execpath run build && ex-test -d ./dist -t ./test/test.js",
+		"test-win": "%npm_execpath% run build && ex-test -d ./dist -t ./test/test.js"
 	},
-	"trustedDependencies": ["@biomejs/biome", "core-js"],
+	"trustedDependencies": [
+		"@biomejs/biome",
+		"core-js"
+	],
 	"type": "module",
 	"version": "1.0.1"
 }
